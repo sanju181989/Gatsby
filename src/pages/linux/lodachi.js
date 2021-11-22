@@ -1,17 +1,15 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../../components/layout"
+import Seo from "../../components/seo"
 
-
-const WindowsPage = ({data }) => {
+const LodachiPage = ({data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (
   <Layout>
-  <Seo title="Console" />
+  <Seo title="Lodachi" />
     <div className="blog-post-container">
       <div className="blog-post">
         <h1>{frontmatter.title}</h1>
@@ -25,13 +23,11 @@ const WindowsPage = ({data }) => {
   )
 }
 
-export default WindowsPage 
-
-
+export default LodachiPage
 
 export const pageQuery = graphql`
-  query WindowsPageQuery {
-    markdownRemark(fileAbsolutePath: { regex: "/windows.md/" }) {
+  query LodachiPageQuery {
+    markdownRemark(fileAbsolutePath: { regex: "/lodachi.md/" }) {
       html
       frontmatter {
         author
@@ -41,4 +37,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-

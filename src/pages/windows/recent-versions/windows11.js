@@ -2,11 +2,10 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../../../components/layout"
+import Seo from "../../../components/seo"
 
-
-const WindowsPage = ({data }) => {
+const Windows11Page = ({data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (
@@ -25,13 +24,11 @@ const WindowsPage = ({data }) => {
   )
 }
 
-export default WindowsPage 
-
-
+export default Windows11Page
 
 export const pageQuery = graphql`
-  query WindowsPageQuery {
-    markdownRemark(fileAbsolutePath: { regex: "/windows.md/" }) {
+  query Windows11PageQuery {
+    markdownRemark(fileAbsolutePath: { regex: "/windows11.md/" }) {
       html
       frontmatter {
         author
@@ -41,4 +38,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
